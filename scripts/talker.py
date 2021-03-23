@@ -2,7 +2,7 @@
 
 import rospy
 from std_msgs.msg import String
-
+from pdb import set_trace
 def talker():
     pub = rospy.Publisher('chatter', String, queue_size=10)
     rospy.init_node('talker', anonymous=True)
@@ -13,6 +13,7 @@ def talker():
         rospy.loginfo(hello_str)
         pub.publish(hello_str)
         rate.sleep()
+        set_trace()
 
 if __name__ == '__main__':
     try:
